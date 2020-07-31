@@ -1,0 +1,16 @@
+.LOGO {
+  width: 200px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border: 1px solid black;
+  margin-bottom: 0;
+  background-color: rgb(169, 169, 169);
+}
+
+.header__inputs {
+  margin-top: 30px;
+}
