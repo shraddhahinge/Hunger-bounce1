@@ -1,3 +1,8 @@
 * {
   margin: 0;
 }
+
+body {
+  --app-color: #d63a13;
+  --app-background: #e6ecf0;
+}
