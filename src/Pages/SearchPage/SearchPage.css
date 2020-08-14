@@ -1,0 +1,45 @@
+.searchpage {
+  position: relative;
+  top: 10rem;
+}
+
+.searchpage__input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 70px;
+  border: 1px solid lightslategray;
+  margin-left: 30rem;
+}
+
+.searchpage__input > input {
+  flex: 1;
+  border: none;
+  height: 65px;
+  padding-left: 30px;
+}
+
+.searchpage__input > .searchpage__icon {
+  width: 80px !important;
+  background-color: #fafafa;
+  border-left: 1px solid lightslategray;
+  color: gray;
+  cursor: pointer;
+  height: 50px;
+}
+
+.searchpage > .searchpage__body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+
+  padding: 20px;
+}
+
+.searchpage > hr {
+  margin-top: 8rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}

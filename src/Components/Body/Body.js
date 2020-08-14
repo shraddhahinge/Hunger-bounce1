@@ -6,6 +6,7 @@ import WhatshotIcon from "@material-ui/icons/Whatshot";
 import FastfoodIcon from "@material-ui/icons/Fastfood";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import EcoIcon from "@material-ui/icons/Eco";
+import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import RestaurantItems from "../../Pages/RestaurantItems/RestaurantItems";
 import SideBar from "./../../Pages/SideBar/SideBar";
 import "./Body.css";
@@ -28,14 +29,23 @@ function Body() {
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
-      let coords = {
-        lat: position.coords.latitude,
-        lon: position.coords.longitude,
-      };
-      setCoordinates(coords);
-      getRestaurantList();
+      // let coords = {
+      //   lat: position.coords.latitude,
+      //   lon: position.coords.longitude,
+      // };
+      setCoordinates(position.coords);
+      // getRestaurantList();
     });
   }, []);
+
+  // 18.604433
+  // 73.78307459999999
+
+  useEffect(() => {
+    if (coordinates) {
+      getRestaurantList();
+    }
+  }, [coordinates]);
 
   const getRestaurantList = async () => {
     let headers = new Headers();
@@ -45,8 +55,9 @@ function Body() {
       method: "GET",
       headers: headers,
     };
-    console.log(coordinates.lat, coordinates.lon);
-    let url = `https://developers.zomato.com/api/v2.1/search?lat=18.6054025$&lon=73.7830977&sort=real_distance`;
+    // console.log(coordinates.lat, coordinates.lon);
+    let url = `https://developers.zomato.com/api/v2.1/search?lat=${coordinates.latitude}&lon=${coordinates.longitude}`;
+    console.log(url);
     await fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
@@ -92,80 +103,85 @@ function Body() {
           </Button>
         </FormControl>
       </div> */}
-      <div className="body__sidebar">
-        <SideBar active Icon={WhatshotIcon} heading="Top Picks" />
-        <SideBar Icon={FastfoodIcon} heading="Hunger Special" />
-        <SideBar Icon={EcoIcon} heading="Vegetarian Options" />
-        {/* <SideBar
-          Icon={FiberManualRecordIcon}
-          heading="Non-vegetarian Options"
-        /> */}
-        <SideBar Icon={LocalOfferIcon} heading="Offers Near You" />
-      </div>
-      <div className="body__list">
-        <h3 className="heading">Top Pick</h3>
-        <div className="restaurant">
-          {nearByRestaurantArray
-            ? nearByRestaurantArray.map((listofrestaurants) => {
-                randomImage =
-                  randomImageNames[Math.floor(Math.random() * (20 - 0) + 0)];
-                return (
-                  <RestaurantItems
-                    image={`https://source.unsplash.com/500x300/?${randomImage}`}
-                    key={listofrestaurants.restaurant.R.res_id}
-                    data={listofrestaurants.restaurant}
-                  />
-                );
-              })
-            : "there are no nearby restaurants"}
+
+      <div className="body__top">
+        {/* SIDEBAR */}
+        <div className="body__sidebar">
+          <SideBar active Icon={WhatshotIcon} heading="Top Picks" />
+          <SideBar Icon={FastfoodIcon} heading="Hunger Special" />
+          <SideBar Icon={EcoIcon} heading="Vegetarian Options" />
+
+          <SideBar Icon={LocalOfferIcon} heading="Offers Near You" />
+          {/* <SideBar Icon={ArrowDownwardIcon} heading="See All" /> */}
         </div>
-        <h3 className="heading">Hunger Special</h3>
-        <div className="restaurant">
-          {nearByRestaurantArray
-            ? nearByRestaurantArray.map((listofrestaurants) => {
-                randomImage =
-                  randomImageNames[Math.floor(Math.random() * (20 - 0) + 0)];
-                return (
-                  <RestaurantItems
-                    image={`https://source.unsplash.com/500x300/?${randomImage}`}
-                    key={listofrestaurants.restaurant.R.res_id}
-                    data={listofrestaurants.restaurant}
-                  />
-                );
-              })
-            : "there are no nearby restaurants"}
-        </div>
-        <h3 className="heading">Vegetarian Options</h3>
-        <div className="restaurant">
-          {nearByRestaurantArray
-            ? nearByRestaurantArray.map((listofrestaurants) => {
-                randomImage =
-                  randomImageNames[Math.floor(Math.random() * (20 - 0) + 0)];
-                return (
-                  <RestaurantItems
-                    image={`https://source.unsplash.com/500x300/?${randomImage}`}
-                    key={listofrestaurants.restaurant.R.res_id}
-                    data={listofrestaurants.restaurant}
-                  />
-                );
-              })
-            : "there are no nearby restaurants"}
-        </div>
-        <h3 className="heading">Offers Near You</h3>
-        <div className="restaurant">
-          {nearByRestaurantArray
-            ? nearByRestaurantArray.map((listofrestaurants) => {
-                randomImage =
-                  randomImageNames[Math.floor(Math.random() * (20 - 0) + 0)];
-                return (
-                  <RestaurantItems
-                    image={`https://source.unsplash.com/500x300/?${randomImage}`}
-                    key={listofrestaurants.restaurant.R.res_id}
-                    data={listofrestaurants.restaurant}
-                  />
-                );
-              })
-            : "there are no nearby restaurants"}
+
+        {/* BODY_LIST */}
+
+        <div className="body__list">
+          <h3 className="heading">Top Pick</h3>
+          <div className="restaurant">
+            {nearByRestaurantArray
+              ? nearByRestaurantArray.slice(0, 6).map((listofrestaurants) => {
+                  randomImage =
+                    randomImageNames[Math.floor(Math.random() * (20 - 0) + 0)];
+                  return (
+                    <RestaurantItems
+                      image={`https://source.unsplash.com/500x300/?${randomImage}`}
+                      key={listofrestaurants.restaurant.R.res_id}
+                      data={listofrestaurants.restaurant}
+                    />
+                  );
+                })
+              : "there are no nearby restaurants"}
+          </div>
+          <h3 className="heading">Hunger Special</h3>
+          <div className="restaurant">
+            {nearByRestaurantArray
+              ? nearByRestaurantArray.slice(6, 12).map((listofrestaurants) => {
+                  randomImage =
+                    randomImageNames[Math.floor(Math.random() * (20 - 0) + 0)];
+                  return (
+                    <RestaurantItems
+                      image={`https://source.unsplash.com/500x300/?${randomImage}`}
+                      key={listofrestaurants.restaurant.R.res_id}
+                      data={listofrestaurants.restaurant}
+                    />
+                  );
+                })
+              : "there are no nearby restaurants"}
+          </div>
+          <h3 className="heading">Vegetarian Options</h3>
+          <div className="restaurant">
+            {nearByRestaurantArray
+              ? nearByRestaurantArray.slice(12, 17).map((listofrestaurants) => {
+                  randomImage =
+                    randomImageNames[Math.floor(Math.random() * (20 - 0) + 0)];
+                  return (
+                    <RestaurantItems
+                      image={`https://source.unsplash.com/500x300/?${randomImage}`}
+                      key={listofrestaurants.restaurant.R.res_id}
+                      data={listofrestaurants.restaurant}
+                    />
+                  );
+                })
+              : "there are no nearby restaurants"}
+          </div>
+          <h3 className="heading">Offers Near You</h3>
+          <div className="restaurant">
+            {nearByRestaurantArray
+              ? nearByRestaurantArray.slice(10, 16).map((listofrestaurants) => {
+                  randomImage =
+                    randomImageNames[Math.floor(Math.random() * (20 - 0) + 0)];
+                  return (
+                    <RestaurantItems
+                      image={`https://source.unsplash.com/500x300/?${randomImage}`}
+                      key={listofrestaurants.restaurant.R.res_id}
+                      data={listofrestaurants.restaurant}
+                    />
+                  );
+                })
+              : "there are no nearby restaurants"}
+          </div>
         </div>
       </div>
     </div>

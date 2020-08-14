@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap");
-.body {
+.body__top {
   position: relative;
-  top: 10rem;
+  top: 48rem;
   display: flex;
   /* justify-content: space-between;
   align-items: center; */
@@ -18,13 +18,14 @@
 } */
 .body__sidebar {
   flex: 0.2;
-  position: fixed;
-  z-index: 100;
+  /* position: fixed; */
+  height: 30rem;
 }
+
 .body__list {
   flex: 0.8;
   position: relative;
-  left: 30rem;
+  /* left: 30%; */
   top: 30%;
   overflow: scroll;
   margin-right: 8rem;

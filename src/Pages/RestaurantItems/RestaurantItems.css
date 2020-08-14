@@ -1,16 +1,18 @@
 .card {
   margin-bottom: 5rem;
+  text-decoration: none;
+  margin-left: 10px;
 }
 .name {
-  background: #777;
+  /* background: #777; */
   border-radius: 50px;
-  font-size: 4px;
 
+  font-weight: bolder;
   margin: 0;
-  color: #fff;
+  color: black;
   padding: 2px 10px;
   text-transform: uppercase;
-  background-color: var(--app-color);
+  /* background-color: var(--app-color); */
   font-family: "Open Sans", sans-serif;
 }
 .card__img {

@@ -6,13 +6,17 @@ import Offers from "./../../Pages/Offers/Offers";
 import Cart from "./../../Pages/Cart/Cart";
 import Signup from "./../../Pages/Signup/Signup";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <div className="header">
-      <div className="header__logo">
-        <img src={hb} alt="logo" className="LOGO" />
-      </div>
+      <Link to="/">
+        <div className="header__logo">
+          <img src={hb} alt="logo" className="LOGO" />
+        </div>
+      </Link>
+
       <div className="header__inputs">
         <Search />
         <Offers />

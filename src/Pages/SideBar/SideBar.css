@@ -11,6 +11,7 @@
 
 .sidebar--active {
   color: var(--app-color);
+  background-color: var(--app-background);
 }
 
 .sidebar > h5 {
@@ -19,16 +20,17 @@
   margin-right: 20px;
 }
 
-.sidebar > p {
-  font-size: 20px;
-}
-
 .sidebar:hover {
   background-color: #ffe9b0;
-  color: var(--app-color);
-  transition: color 100ms ease-out;
+  /* color: var(--app-color); */
+  transition: color 500ms ease-out;
 }
 
 .sidebar > h5:hover {
   font-size: 32px;
+}
+.sidebar:hover > .icon {
+  color: var(--app-color);
+  font-size: 30px !important;
+  transition: color 500ms ease-out;
 }

@@ -1,0 +1,87 @@
+.restaurantdetails {
+  position: relative;
+  top: 10rem;
+  background-color: rgb(39, 35, 36);
+  height: 300px;
+}
+
+.restaurantdetails__header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.header__img {
+  border: 1px solid white;
+  position: relative;
+  top: 1.5rem;
+  height: 250px;
+  width: 400px;
+}
+.baskin {
+  margin-left: 5rem;
+  padding: 20px;
+  position: relative;
+  top: 0.5rem;
+  width: 200px;
+}
+
+.header__details {
+  /* border: 1px solid black; */
+  color: rgb(255, 255, 255);
+  font-weight: 300;
+  font-size: 32px;
+  position: relative;
+  top: 1.5rem;
+  right: 12rem;
+  margin-left: 0;
+  height: 250px;
+}
+
+.details_address {
+  color: inherit;
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.details_cuisine {
+  color: inherit;
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.header__offer {
+  position: relative;
+}
+
+.details_feature {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
+  margin-top: 2rem;
+}
+
+.restaurantdetails__body {
+  position: relative;
+  top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 300px;
+}
+
+.recommended {
+  flex: 0.2;
+  border: 1px solid black;
+  font-weight: 500;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.dishes {
+  flex: 0.8;
+  font-weight: 500;
+  font-size: 25px;
+}
