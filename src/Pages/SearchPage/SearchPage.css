@@ -1,6 +1,7 @@
 .searchpage {
   position: relative;
-  top: 10rem;
+  top: 3rem;
+  overflow: hidden;
 }
 
 .searchpage__input {
@@ -9,24 +10,30 @@
   justify-content: center;
   width: 60%;
   height: 70px;
-  border: 1px solid lightslategray;
-  margin-left: 30rem;
+  border: 5px solid lightslategray;
+  margin-left: 20rem;
+  border-radius: 30px;
 }
 
 .searchpage__input > input {
   flex: 1;
+  font-size: 25px;
   border: none;
   height: 65px;
   padding-left: 30px;
+  border-radius: 50px;
 }
 
 .searchpage__input > .searchpage__icon {
-  width: 80px !important;
-  background-color: #fafafa;
-  border-left: 1px solid lightslategray;
+  width: 90px !important;
+  background-color: #ffcb47;
+  border-left: 5px solid lightslategray;
   color: gray;
   cursor: pointer;
   height: 50px;
+  height: 69px;
+  margin-right: 1px;
+  border-radius: 20px;
 }
 
 .searchpage > .searchpage__body {
@@ -39,7 +46,7 @@
 }
 
 .searchpage > hr {
-  margin-top: 8rem;
+  margin-top: 5rem;
   margin-left: 3rem;
   margin-right: 3rem;
 }

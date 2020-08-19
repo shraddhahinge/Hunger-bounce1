@@ -1,7 +1,9 @@
 .card {
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   text-decoration: none;
   margin-left: 10px;
+  height: 400px;
+  width: 300px;
 }
 .name {
   /* background: #777; */

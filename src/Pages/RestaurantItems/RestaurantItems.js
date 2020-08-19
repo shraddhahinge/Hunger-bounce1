@@ -9,6 +9,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import StarRateIcon from "@material-ui/icons/StarRate";
 import { Link } from "react-router-dom";
+import Flip from "react-reveal/Flip";
 import "./RestaurantItems.css";
 
 const useStyles = makeStyles({
@@ -26,70 +27,72 @@ function RestaurantItems({ image, key, data }) {
 
   return (
     <Link to="/restaurant" style={{ textDecoration: "none" }}>
-      <Card
-        className={`card ${classes.root}`}
-        style={{
-          textDecoration: "none",
-          borderRadius: "10px",
-          boxShadow: "0 2px 20px rgba(0, 0, 0, 0.5)",
-          objectFit: "contain",
-        }}
-      >
-        <CardActionArea>
-          <CardMedia
-            className={`card__img ${classes.media}`}
-            image={img === "" ? image : img}
-          />
-          <CardContent>
-            <Typography
-              gutterBottom
-              variant="h5"
-              component="p"
-              className="name"
-              style={{ marginBottom: "10px", fontSize: "20px" }}
-            >
-              {data.name}
-            </Typography>
-            <Typography
-              variant="body2"
-              color="textSecondary"
-              component="p"
-              className="cuisine"
-              style={{ marginBottom: "10px" }}
-            >
-              {data.cuisines}
-            </Typography>
-
-            <div className="row">
+      <Flip top>
+        <Card
+          className={`card ${classes.root}`}
+          style={{
+            textDecoration: "none",
+            borderRadius: "10px",
+            boxShadow: "0 2px 20px rgba(0, 0, 0, 0.5)",
+            objectFit: "contain",
+          }}
+        >
+          <CardActionArea>
+            <CardMedia
+              className={`card__img ${classes.media}`}
+              image={img === "" ? image : img}
+            />
+            <CardContent>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="p"
+                className="name"
+                style={{ marginBottom: "10px", fontSize: "20px" }}
+              >
+                {data.name}
+              </Typography>
               <Typography
                 variant="body2"
                 color="textSecondary"
                 component="p"
-                className="rating"
-                style={{ color: "white" }}
+                className="cuisine"
+                style={{ marginBottom: "10px" }}
               >
-                <StarRateIcon />
-                {data.user_rating.aggregate_rating}
+                {data.cuisines}
+              </Typography>
+
+              <div className="row">
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  component="p"
+                  className="rating"
+                  style={{ color: "white" }}
+                >
+                  <StarRateIcon />
+                  {data.user_rating.aggregate_rating}
+                </Typography>
+                <Typography variant="body2" color="textPrimary" component="p">
+                  {data.currency}
+                  {data.average_cost_for_two}
+                </Typography>
+              </div>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+                component="p"
+                style={{ marginBottom: "10px" }}
+              >
+                Timing: {data.timings}
               </Typography>
               <Typography variant="body2" color="textPrimary" component="p">
-                {data.currency}
-                {data.average_cost_for_two}
+                Direction: {data.location.address}
               </Typography>
-            </div>
-            <Typography
-              variant="body2"
-              color="textSecondary"
-              component="p"
-              style={{ marginBottom: "10px" }}
-            >
-              Timing: {data.timings}
-            </Typography>
-            <Typography variant="body2" color="textPrimary" component="p">
-              Direction: {data.location.address}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+      </Flip>
     </Link>
   );
 }

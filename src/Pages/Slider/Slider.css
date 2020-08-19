@@ -1,79 +1,30 @@
 .slider {
-  position: relative;
-  top: 8rem;
-  width: 90%;
+  background-color: rgba(27, 31, 34, 0.85);
   height: 600px;
-  overflow: hidden;
+  margin-top: 0.2rem;
 }
-.middle {
+
+.slider__images {
+  width: 60%;
+  height: 550px;
   position: absolute;
-  top: 48%;
-  left: 50%;
+  left: 20%;
+  top: 14%;
   transform: translate(-50%, -50%);
-  background-color: black;
-  width: 100%;
-  padding: 30px;
+  background-image: url("./food3.png");
+  background-size: 100% 100%;
+  box-shadow: 1px 2px 10px 5px white;
+  animation: slides 9s infinite linear;
 }
 
-.slider__navigation {
-  position: absolute;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-}
-
-.bar {
-  width: 50px;
-  height: 10px;
-  border: 2px solid #fff;
-  margin: 6px;
-  cursor: pointer;
-}
-
-.bar:hover {
-  background-color: #fff;
-}
-
-.slides > input[name="r"] {
-  position: absolute;
-  visibility: hidden;
-}
-
-.slides {
-  width: 500%;
-  height: 100%;
-  display: flex;
-  animation: 20s slide infinite;
-}
-
-.slide {
-  width: 20%;
-  transition: 0.6s;
-}
-
-.slide > img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-#r1:checked ~ .s1 {
-  margin-left: 0;
-}
-
-#r2:checked ~ .s1 {
-  margin-left: -20%;
-}
-
-#r3:checked ~ .s1 {
-  margin-left: -40%;
-}
-
-#r4:checked ~ .s1 {
-  margin-left: -60%;
-}
-
-#r5:checked ~ .s1 {
-  margin-left: -80%;
+@keyframes slides {
+  0% {
+    background-image: url("./food2.png");
+  }
+  35% {
+    background-image: url("./food4.png");
+  }
+  75% {
+    background-image: url("./food5.png");
+  }
 }

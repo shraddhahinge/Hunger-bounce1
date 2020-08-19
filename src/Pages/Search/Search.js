@@ -24,7 +24,7 @@ function Search() {
   const classes = useStyles();
   return (
     <div>
-      <Link to="/search">
+      <Link to="/search" style={{ textDecoration: "none" }}>
         <FormControl className={`search ${classes.root}`}>
           <Button
             color="default"

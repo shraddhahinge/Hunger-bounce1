@@ -1,0 +1,47 @@
+.detailscard {
+  display: flex;
+  width: 100%;
+  border-bottom: 2px solid gray;
+}
+
+.detailscard__content {
+  margin-top: 5rem;
+}
+.card__image {
+  height: 150px;
+}
+
+.detailscard__image {
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  margin-left: 3rem;
+}
+
+.content_header {
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.content_price {
+  margin-top: 1rem;
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.content_line {
+  margin-top: 1rem;
+  font-weight: 400;
+  font-size: 20px;
+  color: gray;
+  text-align: justify;
+  width: 800px;
+}
+
+.card__add {
+  margin-left: -8rem;
+  width: 100px;
+  height: 50px;
+  color: green;
+  font-size: 20px;
+  font-weight: bolder;
+}

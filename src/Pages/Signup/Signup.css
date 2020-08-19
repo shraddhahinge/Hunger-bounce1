@@ -1,0 +1,23 @@
+.signup_link {
+  color: white;
+  text-decoration: none;
+}
+
+.signup_option {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.signup_optionLineOne {
+  font-size: 20px;
+  color: #000;
+}
+
+.signup_optionLineTwo {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--app-color);
+}

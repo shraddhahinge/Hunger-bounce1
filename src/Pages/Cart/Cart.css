@@ -1,0 +1,19 @@
+.cart {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 2rem;
+}
+
+.cart__icon {
+  font-size: 50px !important;
+  margin-top: 0.6rem;
+  margin-left: 1rem;
+  color: black;
+}
+
+.cart > span {
+  font-size: 35px;
+  color: black;
+}

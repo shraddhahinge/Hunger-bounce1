@@ -9,6 +9,7 @@ import EcoIcon from "@material-ui/icons/Eco";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import RestaurantItems from "../../Pages/RestaurantItems/RestaurantItems";
 import SideBar from "./../../Pages/SideBar/SideBar";
+
 import "./Body.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -106,11 +107,11 @@ function Body() {
 
       <div className="body__top">
         {/* SIDEBAR */}
+
         <div className="body__sidebar">
           <SideBar active Icon={WhatshotIcon} heading="Top Picks" />
           <SideBar Icon={FastfoodIcon} heading="Hunger Special" />
           <SideBar Icon={EcoIcon} heading="Vegetarian Options" />
-
           <SideBar Icon={LocalOfferIcon} heading="Offers Near You" />
           {/* <SideBar Icon={ArrowDownwardIcon} heading="See All" /> */}
         </div>

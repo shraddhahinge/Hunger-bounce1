@@ -1,0 +1,43 @@
+.checkout {
+  margin-left: 1rem;
+  /* display: flex; */
+}
+
+.checkout > .checkout__left > img {
+  margin-top: 0.5rem;
+  width: 45%;
+  height: 450px;
+  /* object-fit: contain; */
+
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.checkout__left > div > h2 {
+  font-size: 30px;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.checkout__left > div > p {
+  font-size: 25px;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: justify;
+  width: 500px;
+  font-weight: bolder;
+  color: gray;
+  display: flex;
+}
+
+.checkout__left > div > p > .smiley {
+  font-size: 80px !important;
+  color: red;
+}
+
+.checkout__left > div > hr {
+  width: 60%;
+  margin-left: 2rem;
+}

@@ -30,6 +30,7 @@ function SearchPage() {
       .then((response) => response.json())
       .then((data) => {
         setSearchedRestaurantArray(data.restaurants);
+        setInputSearch("");
       });
   };
 
@@ -63,7 +64,7 @@ function SearchPage() {
         <input
           onChange={(e) => setInputSearch(e.target.value)}
           value={inputSearch}
-          placeholder="Search"
+          placeholder="Search for your favourite restaurants, cuisines, dishes...."
           type="text"
         />
         <SearchIcon className="searchpage__icon" onClick={handleSubmit} />
