@@ -26,7 +26,7 @@ function RestaurantItems({ image, key, data }) {
   let img = data.featured_image;
 
   return (
-    <Link to="/restaurant" style={{ textDecoration: "none" }}>
+    <Link to="/restaurantdetails" style={{ textDecoration: "none" }}>
       <Flip top>
         <Card
           className={`card ${classes.root}`}

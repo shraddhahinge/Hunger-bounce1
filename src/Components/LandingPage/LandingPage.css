@@ -1,0 +1,412 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&family=EB+Garamond:ital@1&family=Pacifico&family=Questrial&family=Srisakdi:wght@700&display=swap");
+
+.landingPage {
+  margin-top: 2rem;
+}
+
+.landingPage_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landingPage_headerTitle {
+  position: relative;
+  left: 40px;
+}
+
+.landingPage_headerTitle > h1 {
+  font-family: "Acme", sans-serif;
+  font-size: 100px;
+}
+
+.landingPage_headerTitle > h2 {
+  font-family: "Acme", sans-serif;
+  font-size: 45px;
+  font-weight: lighter;
+  color: #392f5a;
+  margin-top: 2rem;
+}
+
+.landingPage_input {
+  display: flex;
+  align-items: center;
+  border: 5px solid gray;
+  border-radius: 10px;
+  width: 100%;
+  height: 50px;
+  margin-top: 4rem;
+}
+
+.landingPage_input > input {
+  border: none;
+  flex: 1;
+  height: 40px;
+  font-size: 25px;
+  padding-left: 10px;
+}
+
+.landingPage_input > .mylocation_icon {
+  font-size: 40px !important;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.landingPage_input > .landing_searchIcon {
+  font-size: 50px !important;
+  font-weight: bolder !important;
+  border-left: 5px solid #f9a826;
+  border-radius: 10px;
+  color: #172a3a;
+  width: 10%;
+  cursor: pointer;
+}
+
+.landingPage_cards {
+  margin-top: 5rem;
+  overflow: hidden;
+}
+
+.landingPage_cards > h2 {
+  font-family: "Acme", sans-serif;
+  font-size: 45px;
+  font-weight: lighter;
+  color: #392f5a;
+  margin-top: 2rem;
+  position: relative;
+  margin-left: 150px;
+}
+.landing_cards {
+  margin-top: 2rem;
+  display: flex;
+  margin-left: 250px;
+}
+.landing_card {
+  margin-left: 20px;
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.landingPage_collections {
+  margin-top: 10rem;
+}
+.collections_Title > h2 {
+  font-family: "Acme", sans-serif;
+  font-size: 60px;
+  font-weight: lighter;
+  color: #392f5a;
+  margin-top: 2rem;
+  position: relative;
+  margin-left: 150px;
+}
+
+.collections_Title > h3 {
+  font-family: "Acme", sans-serif;
+  font-size: 30px;
+  font-weight: lighter;
+  color: #272727;
+  margin-top: 1rem;
+  position: relative;
+  margin-left: 150px;
+}
+.collections_cards {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.collection_card {
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.about_appImage {
+  width: 700px;
+}
+
+.about_app {
+  margin-left: 70px;
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+}
+.about_appText > p {
+  font-size: 30px;
+  text-align: center;
+  width: 900px;
+  margin-left: 50px;
+  letter-spacing: 2px;
+  line-height: 40px;
+  background-color: #fdf5ce;
+  border-radius: 20px;
+  height: 220px;
+  padding: 50px 30px;
+}
+
+.about_appText > p > strong {
+  font-size: 45px;
+  margin-right: 5px;
+  font-family: "Acme", sans-serif;
+}
+
+.feature_image {
+  width: 150px;
+  object-fit: contain;
+}
+
+.feature1 {
+  display: flex;
+  margin-top: 4rem;
+}
+
+.features_cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 150px;
+}
+
+.landingPage_features {
+  margin-top: 10rem;
+}
+
+.landingPage_features > h2 {
+  font-family: "Acme", sans-serif;
+  font-size: 60px;
+  font-weight: lighter;
+  color: #392f5a;
+  margin-top: 2rem;
+  position: relative;
+  margin-left: 150px;
+}
+
+.feature_text > h2 {
+  font-family: "Pacifico", cursive;
+  font-size: 50px;
+  font-weight: lighter;
+  color: #91171f;
+  margin-top: 2rem;
+  position: relative;
+  margin-left: 50px;
+}
+
+.feature_text > p {
+  font-size: 30px;
+  font-weight: 350;
+
+  position: relative;
+  margin-left: 50px;
+}
+
+.landingPage_getTheApp {
+  background-color: #392f5a;
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.getTheApp_text {
+  position: relative;
+  margin-left: 100px;
+}
+.getTheApp_text > h1 {
+  font-family: "EB Garamond", serif;
+  font-size: 60px;
+  font-weight: lighter;
+  color: #fff;
+  margin-top: 2rem;
+  position: relative;
+  margin-left: 50px;
+}
+.getTheApp_text > h2 {
+  font-size: 40px;
+  font-weight: lighter;
+  color: #fff;
+  position: relative;
+  margin-left: 50px;
+}
+
+.getTheApp_images {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.getTheApp_images > img {
+  width: 300px;
+  margin-left: 50px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.mobileApp {
+  width: 800px;
+}
+
+.landingPage_Tagline {
+  margin-top: 5rem;
+  margin-left: 5rem;
+  float: left;
+}
+
+.landingPage_Tagline2 {
+  margin-right: 5rem;
+  margin-top: 25rem;
+  float: right;
+}
+
+.tag1 {
+  color: #ba1f33;
+  font-size: 80px;
+  font-family: "Balsamiq Sans", cursive;
+}
+
+.tag2 {
+  color: #91171f;
+  margin-left: 3rem;
+  font-size: 80px;
+  font-family: "Balsamiq Sans", cursive;
+}
+.tag3 {
+  color: #f9a826;
+  margin-left: 5rem;
+  font-size: 100px;
+  font-family: "Balsamiq Sans", cursive;
+}
+.tag4 {
+  color: #f9a826;
+  font-size: 100px;
+  font-family: "Balsamiq Sans", cursive;
+}
+.tag5 {
+  color: #ba1f33;
+  font-size: 80px;
+  font-family: "Balsamiq Sans", cursive;
+}
+
+.landingPage_footer {
+  margin-top: 40rem;
+  background-color: #392f5a;
+}
+
+.footer_aboutUs {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.getInTouch_List {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+.getInTouch_List > img {
+  width: 50px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.getInTouch_List > img:hover {
+  text-decoration: underline;
+  width: 55px;
+}
+.about_us_image > img {
+  width: 400px;
+}
+
+.footer_text > h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #f9a826;
+  position: relative;
+  top: 3rem;
+  margin-bottom: 5rem;
+  margin-left: 100px;
+}
+
+.footer_text > p {
+  font-size: 20px;
+  font-weight: normal;
+  color: #fff;
+  letter-spacing: 1px;
+  text-align: justify;
+  width: 90%;
+  position: relative;
+  margin-bottom: 5rem;
+  margin-left: 100px;
+}
+
+.footer_services > h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #f9a826;
+  position: relative;
+  top: 3rem;
+  margin-bottom: 5rem;
+  margin-left: 100px;
+}
+
+.footer_services > p {
+  font-size: 20px;
+  font-weight: normal;
+  color: #fff;
+  letter-spacing: 1px;
+  text-align: justify;
+  width: 85%;
+  position: relative;
+  margin-bottom: 5rem;
+  margin-left: 100px;
+}
+
+.about_us > h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #f9a826;
+  margin-bottom: 1rem;
+}
+
+.about_us_Cities > h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #f9a826;
+  margin-bottom: 1rem;
+}
+
+.about_usGetInTouch > h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #f9a826;
+  margin-bottom: 1rem;
+}
+
+.about_usList > p {
+  font-size: 20px;
+  font-weight: normal;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.cities_List > p {
+  font-size: 20px;
+  font-weight: normal;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.about_usList > p:hover {
+  text-decoration: underline;
+  color: aquamarine;
+}
+
+.cities_List > p:hover {
+  text-decoration: underline;
+  color: aquamarine;
+}

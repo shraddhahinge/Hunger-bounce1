@@ -4,7 +4,10 @@
   display: flex;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  background-color: #ffcb47;
+  background-color: #f9a826;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .headerAccount > p {
   font-size: 40px;

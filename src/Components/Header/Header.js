@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <div className="header">
-      <Link to="/">
+      <Link to="/restaurant">
         <img src={hb} alt="logo" className="LOGO" />
       </Link>
 

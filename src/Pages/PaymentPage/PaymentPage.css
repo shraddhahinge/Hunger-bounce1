@@ -1,0 +1,270 @@
+.paymentPage {
+  display: flex;
+  justify-content: space-between;
+}
+
+.billingAddress {
+  background-color: #fff;
+  width: 100%;
+  height: 600px;
+  margin-top: 1rem;
+  padding: 20px 30px;
+  margin-left: 5rem;
+}
+
+.billingAddress > div > h1 {
+  font-size: 50px;
+  position: relative;
+  right: 13rem;
+}
+
+.billingAddress > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  right: 4.5rem;
+}
+
+.billingAddress > div > .personPinIcon {
+  font-size: 50px !important;
+}
+.billingAddress > form > label > h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 50px;
+  margin-top: 3rem;
+}
+
+.billingAddress > form {
+  padding-left: 3rem;
+}
+
+.billingAddress > form > label > input {
+  width: 70%;
+  height: 40px;
+  border-radius: 20px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 22px;
+  padding-left: 1rem;
+}
+
+.billingAddress > form > label > textarea {
+  width: 50%;
+  height: 40px;
+  border-radius: 10px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 22px;
+  padding-left: 1rem;
+}
+
+.paymentDetails {
+  background-color: #fff;
+  width: 100%;
+  height: 600px;
+  margin-top: 1rem;
+  padding: 20px 30px;
+  margin-left: 5rem;
+  margin-bottom: 10rem;
+}
+
+.paymentDetails > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  right: 4.5rem;
+}
+
+.paymentDetails > div > .personPinIcon {
+  font-size: 50px !important;
+}
+.paymentDetails > div > h1 {
+  font-size: 50px;
+  position: relative;
+  right: 22rem;
+}
+
+.paymentPage__right {
+  background-color: #fff;
+  width: 40%;
+  height: 100vh;
+  margin-top: 1rem;
+  padding: 20px 30px;
+  margin-right: 5rem;
+}
+
+.paymentPage__right > div > .personPinIcon {
+  font-size: 50px !important;
+}
+.paymentPage__right > div > h1 {
+  font-size: 50px;
+  position: relative;
+  right: 9rem;
+}
+
+.paymentPage__right > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  right: 4.5rem;
+}
+
+.paymentCard {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  background-color: #fcfcfc;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  width: 80%;
+  height: 370px;
+  position: absolute;
+  left: 10px;
+  padding: 0;
+}
+
+.cardNumber {
+  position: relative;
+  right: 20%;
+  margin-top: 1rem;
+}
+.paymentCard > .cardNumber > h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 50px;
+}
+
+.paymentCard > .cardNumber > .four_digit {
+  width: 100%;
+  height: 40px;
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+.card_expiry_cvc {
+  display: flex;
+  position: relative;
+  left: 20px;
+  bottom: 50px;
+  margin-top: 5rem;
+}
+
+.card_expiry_cvc > .card_expiry > h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 50px;
+}
+
+.card_expiry_cvc > .card_expiry > .two_digit {
+  width: 30%;
+  height: 40px;
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+.card_expiry_cvc > .card_cvc > h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 50px;
+}
+
+.card_expiry_cvc > .card_cvc > input {
+  width: 30%;
+  height: 40px;
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+.paymentCard > .proceed > button {
+  width: 100%;
+  height: 50px;
+  font-size: 25px;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  background-color: #fcfcfc;
+  color: #000;
+  cursor: pointer;
+}
+.coupon {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 60px;
+  margin-top: 2rem;
+  background-color: #dbdbdb;
+  border: 1px solid black;
+  border-style: dashed;
+  position: relative;
+  left: 2rem;
+  cursor: pointer;
+}
+.coupon > h2 {
+  font-size: 30px;
+  font-weight: 400;
+  position: relative;
+  right: 4rem;
+}
+
+.coupon > .coupon_icon {
+  font-size: 40px !important;
+  position: relative;
+  left: 3rem;
+}
+
+.getSuper {
+  display: flex;
+  align-items: center;
+  width: 65%;
+  height: 80px;
+  margin-top: 2rem;
+  background-color: #efca08;
+  border: 1px solid black;
+  border-style: dotted;
+  position: relative;
+  left: 2rem;
+  cursor: pointer;
+}
+
+.getSuper > h3 {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.getSuper > h2 {
+  font-size: 30px;
+  color: orangered;
+}
+
+.getSuper > h2:hover {
+  color: red;
+}
+
+.toPay {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  position: relative;
+  left: 3rem;
+}
+
+.toPay > h2 {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.toPay > p > strong {
+  font-size: 30px;
+}
+
+.toPay > p > small {
+  font-size: 30px;
+}
+
+.paymentPage__right > hr {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}

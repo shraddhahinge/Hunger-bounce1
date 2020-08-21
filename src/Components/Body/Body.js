@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button, FormControl } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import FilterListIcon from "@material-ui/icons/ShoppingCart";
@@ -6,10 +6,13 @@ import WhatshotIcon from "@material-ui/icons/Whatshot";
 import FastfoodIcon from "@material-ui/icons/Fastfood";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import EcoIcon from "@material-ui/icons/Eco";
+
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import RestaurantItems from "../../Pages/RestaurantItems/RestaurantItems";
 import SideBar from "./../../Pages/SideBar/SideBar";
-
+import ScrollIntoView from "react-scroll-into-view";
 import "./Body.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -28,14 +31,19 @@ function Body() {
   const [nearByRestaurantArray, setNearByRestaurantArray] = useState([]);
   console.log(nearByRestaurantArray);
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
-      // let coords = {
-      //   lat: position.coords.latitude,
-      //   lon: position.coords.longitude,
-      // };
       setCoordinates(position.coords);
-      // getRestaurantList();
     });
   }, []);
 
@@ -45,6 +53,8 @@ function Body() {
   useEffect(() => {
     if (coordinates) {
       getRestaurantList();
+    } else {
+      onCostLowToHigh();
     }
   }, [coordinates]);
 
@@ -64,6 +74,35 @@ function Body() {
       .then((data) => {
         setNearByRestaurantArray(data.restaurants);
       });
+  };
+
+  const TopRatings = () => {
+    setNearByRestaurantArray([
+      ...nearByRestaurantArray.sort(
+        (a, b) =>
+          parseInt(a.restaurant.user_rating.votes) -
+          parseInt(b.restaurant.user_rating.votes)
+      ),
+    ]);
+  };
+
+  const onCostHighToLow = () => {
+    setNearByRestaurantArray([
+      ...nearByRestaurantArray.sort(
+        (b, a) =>
+          parseInt(a.restaurant.average_cost_for_two) -
+          parseInt(b.restaurant.average_cost_for_two)
+      ),
+    ]);
+  };
+  const onCostLowToHigh = () => {
+    setNearByRestaurantArray([
+      ...nearByRestaurantArray.sort(
+        (a, b) =>
+          parseInt(a.restaurant.average_cost_for_two) -
+          parseInt(b.restaurant.average_cost_for_two)
+      ),
+    ]);
   };
 
   let randomImageNames = [
@@ -93,33 +132,57 @@ function Body() {
   const classes = useStyles();
   return (
     <div className="body">
-      {/* <div className="body__filter">
-        <FormControl className={`filter ${classes.root}`}>
-          <Button
-            variant="contained"
-            color="default"
-            startIcon={<FilterListIcon />}
-          >
-            Filters
-          </Button>
-        </FormControl>
-      </div> */}
-
+      <div className="body_filter">
+        <Button
+          className="filter_button"
+          aria-controls="simple-menu"
+          aria-haspopup="true"
+          onClick={handleClick}
+        >
+          Filters
+        </Button>
+        <Menu
+          id="simple-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        >
+          <MenuItem onClick={TopRatings && handleClose}>Top Ratings</MenuItem>
+          <MenuItem onClick={onCostHighToLow && handleClose}>
+            Cost High to Low
+          </MenuItem>
+          <MenuItem onClick={onCostLowToHigh && handleClose}>
+            Cost Low to High
+          </MenuItem>
+        </Menu>
+      </div>
+      <hr />
       <div className="body__top">
         {/* SIDEBAR */}
 
         <div className="body__sidebar">
-          <SideBar active Icon={WhatshotIcon} heading="Top Picks" />
-          <SideBar Icon={FastfoodIcon} heading="Hunger Special" />
-          <SideBar Icon={EcoIcon} heading="Vegetarian Options" />
-          <SideBar Icon={LocalOfferIcon} heading="Offers Near You" />
-          {/* <SideBar Icon={ArrowDownwardIcon} heading="See All" /> */}
+          <ScrollIntoView selector="#pick">
+            <SideBar active Icon={WhatshotIcon} heading="Top Picks" />
+          </ScrollIntoView>
+
+          <ScrollIntoView selector="#hunger">
+            <SideBar Icon={FastfoodIcon} heading="Hunger Special" />
+          </ScrollIntoView>
+          <ScrollIntoView selector="#vegetarian">
+            <SideBar Icon={EcoIcon} heading="Vegetarian Options" />
+          </ScrollIntoView>
+          <ScrollIntoView selector="#offers">
+            <SideBar Icon={LocalOfferIcon} heading="Offers Near You" />
+          </ScrollIntoView>
         </div>
 
         {/* BODY_LIST */}
 
         <div className="body__list">
-          <h3 className="heading">Top Pick</h3>
+          <h3 className="heading" id="pick">
+            Top Pick
+          </h3>
           <div className="restaurant">
             {nearByRestaurantArray
               ? nearByRestaurantArray.slice(0, 6).map((listofrestaurants) => {
@@ -135,6 +198,7 @@ function Body() {
                 })
               : "there are no nearby restaurants"}
           </div>
+          <hr id="hunger" />
           <h3 className="heading">Hunger Special</h3>
           <div className="restaurant">
             {nearByRestaurantArray
@@ -151,6 +215,7 @@ function Body() {
                 })
               : "there are no nearby restaurants"}
           </div>
+          <hr id="vegetarian" />
           <h3 className="heading">Vegetarian Options</h3>
           <div className="restaurant">
             {nearByRestaurantArray
@@ -167,6 +232,7 @@ function Body() {
                 })
               : "there are no nearby restaurants"}
           </div>
+          <hr id="offers" />
           <h3 className="heading">Offers Near You</h3>
           <div className="restaurant">
             {nearByRestaurantArray

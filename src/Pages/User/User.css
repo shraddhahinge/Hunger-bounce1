@@ -1,0 +1,29 @@
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.userdetails {
+  margin-left: 3rem;
+}
+
+.userdetails > h1 {
+  font-family: "Acme", sans-serif;
+  font-size: 100px;
+  color: #392f5a;
+}
+
+.userdetails > h2 {
+  font-family: "Acme", sans-serif;
+  font-size: 60px;
+  color: #f9a826;
+  margin-left: 3rem;
+}
+
+.userdetails > p {
+  font-family: "Acme", sans-serif;
+  font-size: 40px;
+  font-weight: lighter;
+  margin-top: 3rem;
+  margin-left: 3rem;
+}

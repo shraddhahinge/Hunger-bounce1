@@ -18,7 +18,7 @@ function Login() {
       .then((auth) => {
         //logged in, redirect to homepage...
 
-        history.push("/");
+        history.push("/restaurant");
       })
       .catch((e) => alert(e.message));
   };
@@ -30,7 +30,7 @@ function Login() {
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
         //create a user and logged in, redirect to homepage...
-        history.push("/");
+        history.push("/restaurant");
       })
       .catch((e) => alert(e.message));
   };
@@ -70,7 +70,10 @@ function Login() {
             </form>
           </div>
         </div>
-        <img src={hb} alt="" className="login__logo" />
+        <Link to="/restaurant">
+          <img src={hb} alt="" className="login__logo" />
+        </Link>
+
         <div className="second__half">
           <div className="content__text">
             <h2>New here?</h2>

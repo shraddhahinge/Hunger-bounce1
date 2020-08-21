@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&family=EB+Garamond:ital@1&family=Pacifico&family=Questrial&family=Srisakdi:wght@700&display=swap");
+.slide {
+  margin-top: 0.3rem;
+  background-color: #392f5a;
+  padding: 30px;
+}
+
+.image_slider > img {
+  height: 300px;
+  width: 400px;
+  margin-left: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.slide_text {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.slide_text > img {
+  width: 500px;
+}
+.slide_text > h2 {
+  color: #f9a826;
+  font-size: 80px;
+  font-family: "Balsamiq Sans", cursive;
+}

@@ -10,8 +10,9 @@
 }
 
 .sidebar--active {
-  color: var(--app-color);
-  background-color: var(--app-background);
+  border-radius: 30px;
+  color: #f9a826;
+  background-color: #392f5a;
 }
 
 .sidebar > h5 {
@@ -21,7 +22,9 @@
 }
 
 .sidebar:hover {
-  background-color: #ffe9b0;
+  color: #f9a826;
+  background-color: #392f5a;
+  border-radius: 30px;
   /* color: var(--app-color); */
   transition: color 500ms ease-out;
 }
@@ -30,7 +33,7 @@
   font-size: 32px;
 }
 .sidebar:hover > .icon {
-  color: var(--app-color);
-  font-size: 30px !important;
+  color: #f9a826;
+  /* font-size: 30px !important; */
   transition: color 500ms ease-out;
 }

@@ -5,7 +5,7 @@ import hb from "./hb.jpg";
 function HeaderAccount() {
   return (
     <div className="headerAccount">
-      <Link to="/">
+      <Link to="/restaurant">
         <img src={hb} alt="logo" className="LOGO" />
       </Link>
       <p>Your Food Basket</p>

@@ -34,7 +34,7 @@ function RestaurantDetails() {
             </div>
             <span></span>
             <div className="feature_cost">
-              <h2>$30</h2>
+              <h2>Rs.30</h2>
               <AttachMoneyIcon className="cost_icon" />
             </div>
           </div>

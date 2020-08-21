@@ -1,0 +1,43 @@
+.cartitems {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  margin-left: 3rem;
+  border-bottom: 3px solid gray;
+  width: 80%;
+}
+
+.cartitems__image {
+  object-fit: contain;
+  width: 150px;
+  height: 150px;
+}
+
+.cartitems__info {
+  padding-left: 20px;
+}
+
+.cartitems__info > p > strong {
+  font-size: 30px;
+  font-weight: normal;
+}
+.cartitems__info > p > small {
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.cartitems__title {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.cartitems__info > button {
+  background: #f0c14b;
+  border: 1px solid;
+  margin-top: 10px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 20px;
+}
