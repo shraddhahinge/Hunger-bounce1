@@ -3,7 +3,7 @@ import "./SearchPage.css";
 import SearchIcon from "@material-ui/icons/Search";
 import RestaurantItems from "./../RestaurantItems/RestaurantItems";
 
-function SearchPage() {
+function SearchPage(props) {
   const [inputSearch, setInputSearch] = useState("");
   const [searchedRestaurantArray, setSearchedRestaurantArray] = useState([]);
   console.log("🍕🍕", searchedRestaurantArray);
@@ -25,7 +25,7 @@ function SearchPage() {
       headers: headers,
     };
 
-    let url = `https://developers.zomato.com/api/v2.1/search?entity_type=landmark&q=${inputSearch}&start=0&count=20&lat=${lat_long.latitude}&lon=${lat_long.longitude}`;
+    let url = `https://developers.zomato.com/api/v2.1/search?entity_type=landmark&q=${inputSearch}&start=0&count=20&lat=${props.lat}&lon=${props.lng}`;
     await fetch(url, options)
       .then((response) => response.json())
       .then((data) => {

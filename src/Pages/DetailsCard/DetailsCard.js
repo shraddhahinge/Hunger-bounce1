@@ -22,7 +22,7 @@ function DetailsCard({ id, title, price, text, image }) {
     <div className="detailscard">
       <div className="detailscard__content">
         <h3 className="content_header">{title}</h3>
-        <p className="content_price">${price}</p>
+        <p className="content_price">RS.{price}</p>
         <p className="content_line">{text}</p>
       </div>
       <div className="detailscard__image">

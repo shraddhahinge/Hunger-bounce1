@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Body() {
+function Body(props) {
   const [coordinates, setCoordinates] = useState({});
   console.log(coordinates.lat, coordinates.lon);
   const [nearByRestaurantArray, setNearByRestaurantArray] = useState([]);
@@ -67,7 +67,7 @@ function Body() {
       headers: headers,
     };
     // console.log(coordinates.lat, coordinates.lon);
-    let url = `https://developers.zomato.com/api/v2.1/search?lat=${coordinates.latitude}&lon=${coordinates.longitude}`;
+    let url = `https://developers.zomato.com/api/v2.1/search?lat=${props.lat}&lon=${props.lng}`;
     console.log(url);
     await fetch(url, options)
       .then((response) => response.json())

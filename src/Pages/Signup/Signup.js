@@ -26,6 +26,15 @@ function Signup() {
       auth.signOut();
     }
   };
+    function cor(){
+    let np = [];
+    for(let i of user.email){
+      if(i === "@")
+        break;
+      np.push(i);
+    }
+    return (np);
+  }
 
   return (
     <div className="signup">
@@ -42,7 +51,7 @@ function Signup() {
           </FormControl>
         ) : (
           <div onClick={login} className="signup_option">
-            <span className="signup_optionLineOne">Hello, {user?.email} </span>
+            <span className="signup_optionLineOne">{cor()} </span>
             <span className="signup_optionLineTwo">
               {user ? "Sign Out" : "Sign In"}
             </span>

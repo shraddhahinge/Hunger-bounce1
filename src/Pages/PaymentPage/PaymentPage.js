@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./PaymentPage.css";
+import { db } from "./../../fireauth";
+import firebase from "firebase";
 import PaymentTwoToneIcon from "@material-ui/icons/PaymentTwoTone";
 import FastfoodTwoToneIcon from "@material-ui/icons/FastfoodTwoTone";
 import PersonPinIcon from "@material-ui/icons/PersonPin";
@@ -8,10 +10,26 @@ import { useStateValue } from "./../../StateProvider";
 import CartItems from "./../CartItems/CartItems";
 import EmojiNatureIcon from "@material-ui/icons/EmojiNature";
 import { getBasketTotal } from "./../../Reducer";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function PaymentPage() {
   const [{ basket }] = useStateValue();
+  const [details, setDetails] = useState([]);
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+  const history = useHistory();
+  const addDetails = (event) => {
+    //this will fire off when we click the button
+    event.preventDefault(); // will stop the REFRESH
+    //console.log("im working!!");
+
+    db.collection("user details").add({
+      name: name,
+      address: address,
+    });
+    setDetails([...details, name, address]);
+    history.push("/userdetails");
+  };
   return (
     <div className="paymentPage">
       <div className="paymentPage__left">
@@ -24,7 +42,12 @@ function PaymentPage() {
           <form>
             <label>
               <h2>👤Full Name</h2>
-              <input type="text" placeholder="e.g John deo" />
+              <input
+                type="text"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                placeholder="e.g John deo"
+              />
             </label>
 
             <label>
@@ -32,6 +55,8 @@ function PaymentPage() {
               <textarea
                 type="text"
                 placeholder="e.g Buld No.C4 Flat No.4 Sunshine Nagar, Rahatani"
+                value={address}
+                onChange={(event) => setAddress(event.target.value)}
               />
             </label>
             <label>
@@ -46,56 +71,59 @@ function PaymentPage() {
             <h1>Payment</h1>
           </div>
           <div className="paymentCard">
-            <div className="cardNumber">
-              <h2>Card number:</h2>
-              <MaskedInput
-                mask={[
-                  /\d/,
-                  /\d/,
-                  /\d/,
-                  /\d/,
+            <form>
+              <div className="cardNumber">
+                <h2>Card number:</h2>
+                <MaskedInput
+                  mask={[
+                    /\d/,
+                    /\d/,
+                    /\d/,
+                    /\d/,
 
-                  " ",
-                  /\d/,
-                  /\d/,
-                  /\d/,
-                  /\d/,
-                  " ",
-                  /\d/,
-                  /\d/,
-                  /\d/,
-                  /\d/,
-                  " ",
-                  /\d/,
-                  /\d/,
-                  /\d/,
-                  /\d/,
-                ]}
-                className="four_digit"
-                placeholder="9999 9999 9999 9999"
-              />
-            </div>
-            <div className="card_expiry_cvc">
-              <div className="card_expiry">
-                <h2>Expiry Date:</h2>
-                <MaskedInput
-                  mask={[/[0-9]/, /[1-9]/, "/", /[2-9]/, /[0-9]/]}
-                  className="two_digit"
-                  placeholder="00/00"
+                    " ",
+                    /\d/,
+                    /\d/,
+                    /\d/,
+                    /\d/,
+                    " ",
+                    /\d/,
+                    /\d/,
+                    /\d/,
+                    /\d/,
+                    " ",
+                    /\d/,
+                    /\d/,
+                    /\d/,
+                    /\d/,
+                  ]}
+                  className="four_digit"
+                  placeholder="9999 9999 9999 9999"
                 />
               </div>
-              <div className="card_cvc">
-                <h2>CVC:</h2>
-                <MaskedInput
-                  mask={[/[0-9]/, /[0-9]/, /[0-9]/]}
-                  className="three_digit"
-                  placeholder="000"
-                />
+              <div className="card_expiry_cvc">
+                <div className="card_expiry">
+                  <h2>Expiry Date:</h2>
+                  <MaskedInput
+                    mask={[/[0-9]/, /[1-9]/, "/", /[2-9]/, /[0-9]/]}
+                    className="two_digit"
+                    placeholder="00/00"
+                  />
+                </div>
+                <div className="card_cvc">
+                  <h2>CVC:</h2>
+                  <MaskedInput
+                    mask={[/[0-9]/, /[0-9]/, /[0-9]/]}
+                    className="three_digit"
+                    placeholder="000"
+                  />
+                </div>
               </div>
-            </div>
-            <Link to="/userdetails" className="proceed">
-              <button>Proceed to Checkout</button>
-            </Link>
+
+              <button type="submit" onClick={addDetails}>
+                Proceed to Checkout
+              </button>
+            </form>
           </div>
         </div>
       </div>

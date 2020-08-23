@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
 import hb from "./hb.jpg";
+import authentication from "./authentication.svg";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "./../../fireauth";
 
@@ -36,86 +37,44 @@ function Login() {
   };
 
   return (
-    <div className="login__body">
-      <div className="login__content">
-        <div className="first__half">
-          <div className="content__text">
-            <h2>One of us?</h2>
-            <p>
-              If you already have an account, just sign in. We've missed you!💖
-            </p>
-          </div>
-          <div className="content__form">
-            <h2>Sign In</h2>
-            <form>
-              <label>
-                <span>Email Address</span>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                />
-              </label>
-              <label>
-                <span>Password</span>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(event) => setPassword(event.target.value)}
-                />
-              </label>
-              <button onClick={login} className="form__submit" type="button">
-                Sign In
-              </button>
-            </form>
-          </div>
-        </div>
-        <Link to="/restaurant">
-          <img src={hb} alt="" className="login__logo" />
+    <div className="login">
+      <div className="login_body">
+        <Link to="/">
+          <img className="login__logo" src={hb} alt="" />
         </Link>
-
-        <div className="second__half">
-          <div className="content__text">
-            <h2>New here?</h2>
-            <p>
-              Sign up and discover your favourite cuisines, dishes and
-              restaurants🥂
-            </p>
-          </div>
-          <div className="content__form2">
-            <h2>Sign Up</h2>
-            <form>
-              <label>
-                <span>Name</span>
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(event) => setName(event.target.value)}
-                />
-              </label>
-              <label>
-                <span>Email Address</span>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                />
-              </label>
-              <label>
-                <span>Generate Password</span>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(event) => setPassword(event.target.value)}
-                />
-              </label>
-              <button onClick={register} className="form__submit" type="button">
-                Create your account
-              </button>
-            </form>
-          </div>
+        <div className="login__container">
+          <h1>Sign In</h1>
+          <form>
+            <h5>E-mail</h5>
+            <input
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              type="email"
+            />
+            <h5>Password</h5>
+            <input
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              type="password"
+            />
+            <button
+              onClick={login}
+              type="submit"
+              className="login__signInButton"
+            >
+              Sign In
+            </button>
+          </form>
+          <p>
+            By continuing, you agree to Hunger Bounce Conditions of Use and
+            Privacy Notice.
+          </p>
+          <button onClick={register} className="login__registerButton">
+            Create your Hunger Bounce Account
+          </button>
         </div>
       </div>
+      <img src={authentication} className="authentication" />
     </div>
   );
 }

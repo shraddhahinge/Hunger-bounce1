@@ -5,6 +5,7 @@ import bike from "./bike.svg";
 import "./User.css";
 function User() {
   const [{ basket }] = useStateValue();
+
   return (
     <div className="user">
       <img src={bike} />

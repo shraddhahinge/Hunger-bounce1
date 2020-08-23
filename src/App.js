@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {useState , useEffect } from "react";
 import "./App.css";
 import Header from "./Components/Header/Header";
 import Body from "./Components/Body/Body";
@@ -20,7 +20,10 @@ import { useStateValue } from "./StateProvider";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
-
+  const [lat , setlat] = useState([]);
+  const [lng , setlng] = useState([]);
+  const [data , setdata] = useState({});
+  console.log(lat)
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
@@ -52,16 +55,25 @@ function App() {
         <Switch>
           <Route exact path="/">
             <LandingHeader />
-            <LandingPage />
+            <LandingPage
+             lat = {(e) =>setlat(e)}
+             lng = {(e) =>setlng(e)} 
+            />
           </Route>
-          <Route exact path="/restaurant">
+          <Route exact path="/Restaurant">
             <Header />
             <Slide />
-            <Body />
+            <Body 
+             lat={lat}
+             lng={lng}            
+            />
           </Route>
           <Route exact path="/search">
             <Header />
-            <SearchPage />
+            <SearchPage
+             lat={lat}
+             lng={lng} 
+            />
           </Route>
           <Route exact path="/restaurantdetails">
             <Header />

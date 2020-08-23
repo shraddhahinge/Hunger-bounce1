@@ -9,6 +9,9 @@ import card1 from "./card1.jpg";
 import card2 from "./card2.jpg";
 import card3 from "./card3.jpg";
 import card4 from "./card4.jpg";
+import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { GoogleComponent } from "react-google-location";
 import collection1 from "./collection1.jpg";
 import collection2 from "./collection2.jpg";
 import collection3 from "./collection3.jpg";
@@ -32,8 +35,31 @@ import Zoom from "react-reveal/Zoom";
 import Rotate from "react-reveal/Rotate";
 
 import "./LandingPage.css";
+const API_KEY = "AIzaSyDo6TAihyVcLfi24e3Jym11WQR0Iv6CvEU";
+function LandingPage(props) {
+  let history = useHistory();
+  const [place, setplace] = useState({});
+  const [current, setCurrent] = useState({});
+  console.log("current", current);
+  function cor() {
+    props.lat(place.coordinates.lat);
+    props.lng(place.coordinates.lng);
+    console.log(place.coordinates);
+    history.push("/Restaurant");
 
-function LandingPage() {
+    //
+    //
+  }
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      setCurrent(position.coords);
+    });
+  }, []);
+  function currentlocation() {
+    history.push("/Restaurant");
+  }
+
   return (
     <div className="landingPage">
       <div className="landingPage_header">
@@ -41,18 +67,37 @@ function LandingPage() {
           <h1>Hunger Bounce</h1>
           <h2>Let the deliciousness twril in your mouth😋</h2>
           <div className="landingPage_input">
-            <input
-              type="text"
-              placeholder="Search by location or your favourite restaurant..."
+            <div className="autocomplete">
+              <GoogleComponent
+                apiKey={API_KEY}
+                language={"en"}
+                country={"country:in"}
+                coordinates={true}
+                placeholder={
+                  "Search by location or your favourite restaurant..."
+                }
+                onChange={(e) => {
+                  setplace(e);
+                  if (place.coordinates) {
+                    cor();
+                  }
+                }}
+              />
+            </div>
+            <MyLocationIcon
+              onChange={(e) => {
+                if (current) {
+                  currentlocation();
+                }
+              }}
+              className="mylocation_icon"
             />
-            <MyLocationIcon className="mylocation_icon" />
             <SearchIcon className="landing_searchIcon" />
           </div>
         </div>
         <img src={breakfast} alt="" className="breakfast" />
       </div>
       <div className="landingPage_cards">
-        <h2>Hunger Bounce Special</h2>
         <div className="landing_cards">
           <Fade left delay={4000}>
             <img src={card4} id="card1" className="landing_card" />

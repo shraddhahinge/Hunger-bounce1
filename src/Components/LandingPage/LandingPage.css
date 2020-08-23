@@ -34,9 +34,17 @@
   align-items: center;
   border: 5px solid gray;
   border-radius: 10px;
-  width: 100%;
+  width: 100% !important;
   height: 50px;
   margin-top: 4rem;
+}
+
+.autocomplete {
+  flex: 1;
+  margin-left: 10px;
+  height: 40px;
+  z-index: 100;
+  font-size: 20px;
 }
 
 .landingPage_input > input {
@@ -409,4 +417,405 @@
 .cities_List > p:hover {
   text-decoration: underline;
   color: aquamarine;
+}
+
+@media screen and (max-width: 900px) {
+  .landingPage_headerTitle > h1 {
+    font-family: "Acme", sans-serif;
+    font-size: 80px;
+  }
+  .landingPage_headerTitle {
+    margin-left: 8rem;
+  }
+  .breakfast {
+    display: none;
+  }
+  .landingPage_headerTitle > h2 {
+    font-family: "Acme", sans-serif;
+    font-size: 30px;
+    font-weight: lighter;
+    color: #392f5a;
+  }
+  .landingPage_input {
+    display: flex;
+    align-items: center;
+    border: 5px solid gray;
+    border-radius: 10px;
+    width: 100% !important;
+    height: 50px;
+  }
+  .autocomplete {
+    flex: 1;
+    margin-left: 10px;
+    height: 40px;
+
+    font-size: 20px;
+  }
+
+  .landingPage_input > input {
+    border: none;
+    flex: 1;
+    height: 40px;
+    font-size: 25px;
+    padding-left: 10px;
+  }
+
+  .landingPage_input > .mylocation_icon {
+    font-size: 35px !important;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+
+  .landingPage_input > .landing_searchIcon {
+    font-size: 50px !important;
+    font-weight: bolder !important;
+    border-left: 5px solid #f9a826;
+    border-radius: 10px;
+    color: #172a3a;
+    width: 10%;
+    cursor: pointer;
+  }
+
+  .landingPage_cards {
+    margin-top: 5rem;
+    overflow: hidden;
+  }
+
+  .landing_cards {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    right: 27%;
+  }
+  .landing_card {
+    width: 330px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+  }
+
+  .landingPage_collections {
+    margin-top: 10rem;
+  }
+  .collections_Title > h2 {
+    font-family: "Acme", sans-serif;
+    font-size: 60px;
+    font-weight: lighter;
+    color: #392f5a;
+    margin-top: 2rem;
+    position: relative;
+    margin-left: 150px;
+  }
+
+  .collections_Title > h3 {
+    font-family: "Acme", sans-serif;
+    font-size: 30px;
+    font-weight: lighter;
+    color: #272727;
+    margin-top: 1rem;
+    position: relative;
+    margin-left: 150px;
+  }
+  .collections_cards {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 130px;
+  }
+  .collection_card {
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    margin-bottom: 2rem;
+  }
+
+  .about_appImage {
+    width: 250px;
+  }
+
+  .about_app {
+    margin-left: 50px;
+    margin-top: 10rem;
+    display: flex;
+    align-items: center;
+  }
+  .about_appText > p {
+    font-size: 20px;
+    text-align: center;
+    width: 400px;
+    margin-left: 50px;
+    letter-spacing: 1px;
+    line-height: 30px;
+    background-color: #fdf5ce;
+    border-radius: 20px;
+    height: 160px;
+    padding: 50px 30px;
+  }
+
+  .about_appText > p > strong {
+    font-size: 35px;
+    margin-right: 5px;
+    font-family: "Acme", sans-serif;
+  }
+
+  .feature_image {
+    width: 100px;
+    object-fit: contain;
+  }
+
+  .feature1 {
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  .features_cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 50px;
+  }
+
+  .landingPage_features {
+    margin-top: 10rem;
+  }
+
+  .landingPage_features > h2 {
+    font-family: "Acme", sans-serif;
+    font-size: 60px;
+    font-weight: lighter;
+    color: #392f5a;
+    margin-top: 2rem;
+    position: relative;
+    margin-left: 150px;
+  }
+
+  .feature_text > h2 {
+    font-family: "Pacifico", cursive;
+    font-size: 35px;
+    font-weight: lighter;
+    color: #91171f;
+
+    position: relative;
+    margin-left: 10px;
+  }
+
+  .feature_text > p {
+    font-size: 25px;
+    font-weight: 350;
+
+    position: relative;
+    margin-left: 20px;
+  }
+
+  .landingPage_getTheApp {
+    background-color: #392f5a;
+    margin-top: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .getTheApp_text {
+    position: relative;
+    margin-left: 10px;
+  }
+  .getTheApp_text > h1 {
+    font-family: "EB Garamond", serif;
+    font-size: 40px;
+    font-weight: lighter;
+    color: #fff;
+    margin-top: 2rem;
+    position: relative;
+  }
+  .getTheApp_text > h2 {
+    font-size: 30px;
+    font-weight: lighter;
+    color: #fff;
+    position: relative;
+    margin-left: 50px;
+  }
+
+  .getTheApp_images {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .getTheApp_images > img {
+    width: 150px;
+    margin-left: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .mobileApp {
+    width: 500px;
+  }
+
+  .landingPage_Tagline {
+    margin-top: 5rem;
+    margin-left: 1rem;
+    float: left;
+  }
+
+  .landingPage_Tagline2 {
+    margin-right: 1rem;
+    margin-top: 5rem;
+    float: right;
+  }
+
+  .tag1 {
+    color: #ba1f33;
+    font-size: 50px;
+    font-family: "Balsamiq Sans", cursive;
+  }
+
+  .tag2 {
+    color: #91171f;
+    margin-left: 3rem;
+    font-size: 50px;
+    font-family: "Balsamiq Sans", cursive;
+  }
+  .tag3 {
+    color: #f9a826;
+    margin-left: 5rem;
+    font-size: 80px;
+    font-family: "Balsamiq Sans", cursive;
+  }
+  .tag4 {
+    color: #f9a826;
+    font-size: 80px;
+    font-family: "Balsamiq Sans", cursive;
+  }
+  .tag5 {
+    color: #ba1f33;
+    font-size: 50px;
+    font-family: "Balsamiq Sans", cursive;
+  }
+
+  .landingPage_footer {
+    margin-top: 40rem;
+    background-color: #392f5a;
+  }
+
+  .footer_aboutUs {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+  }
+
+  .getInTouch_List {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+  }
+  .getInTouch_List > img {
+    width: 40px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  .getInTouch_List > img:hover {
+    text-decoration: underline;
+    width: 45px;
+  }
+  .about_us_image > img {
+    width: 200px;
+  }
+
+  .footer_text > h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f9a826;
+    position: relative;
+    top: 3rem;
+    margin-bottom: 5rem;
+    margin-left: 100px;
+  }
+
+  .footer_text > p {
+    font-size: 10px;
+    font-weight: normal;
+    color: #fff;
+    letter-spacing: 1px;
+    text-align: justify;
+    width: 80%;
+    position: relative;
+    margin-bottom: 5rem;
+    margin-left: 100px;
+  }
+
+  .footer_services > h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f9a826;
+    position: relative;
+    top: 3rem;
+    margin-bottom: 5rem;
+    margin-left: 100px;
+  }
+
+  .footer_services > p {
+    font-size: 10px;
+    font-weight: normal;
+    color: #fff;
+    letter-spacing: 1px;
+    text-align: justify;
+    width: 80%;
+    position: relative;
+    margin-bottom: 5rem;
+    margin-left: 100px;
+  }
+
+  .about_us > h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f9a826;
+    margin-bottom: 1rem;
+  }
+
+  .about_us_Cities > h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f9a826;
+    margin-bottom: 1rem;
+  }
+
+  .about_usGetInTouch > h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f9a826;
+    margin-bottom: 1rem;
+  }
+
+  .about_usList > p {
+    font-size: 10px;
+    font-weight: normal;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  .cities_List > p {
+    font-size: 10px;
+    font-weight: normal;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  .about_usList > p:hover {
+    text-decoration: underline;
+    color: aquamarine;
+  }
+
+  .cities_List > p:hover {
+    text-decoration: underline;
+    color: aquamarine;
+  }
 }

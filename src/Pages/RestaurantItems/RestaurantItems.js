@@ -6,6 +6,7 @@ import {
   CardContent,
   Typography,
 } from "@material-ui/core";
+import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
 import StarRateIcon from "@material-ui/icons/StarRate";
 import { Link } from "react-router-dom";
@@ -25,9 +26,27 @@ function RestaurantItems({ image, key, data }) {
   const classes = useStyles();
   let img = data.featured_image;
 
+  function cor(){
+  console.log(data);
+           axios
+        .post(`https://hb-visit.firebaseio.com/.json`, {
+          Name: data.name,
+          menu: data.cuisines,
+          price: data.average_cost_for_two,
+          address:data.location.address,
+          rating:data.user_rating.aggregate_rating,
+         
+        })
+        .then(
+        );
+}
+
+
+
   return (
-    <Link to="/restaurantdetails" style={{ textDecoration: "none" }}>
+       <Link to="/restaurantdetails" style={{ textDecoration: "none" }}> 
       <Flip top>
+        <div onClick={cor}>
         <Card
           className={`card ${classes.root}`}
           style={{
@@ -92,9 +111,14 @@ function RestaurantItems({ image, key, data }) {
             </CardContent>
           </CardActionArea>
         </Card>
+          </div>
       </Flip>
+    
     </Link>
   );
+
+  
+  
 }
 
 export default RestaurantItems;
